@@ -1,0 +1,64 @@
+{
+  "common": {
+    "slogan": "Act Intelligently",
+    "nav": {
+      "features": "Features",
+      "testimonials": "Testimonials",
+      "faq": "FAQ"
+    },
+    "cta": {
+      "bookDemo": "Build Your Agent",
+      "getStarted": "Get Started",
+      "title": "Ready to Transform Your Customer Service?",
+      "subtitle": "Join hundreds of businesses using AI voice agents to handle calls, book appointments, and never miss an opportunity."
+    },
+    "hero": {
+      "badge": "Specialized AI Agents",
+      "title": "Specialized AI Agents for Your Industry",
+      "subtitle": "Deploy tailored agentic AI for operations, compliance, and procurement — built on Hooshpod."
+    },
+    "header": {
+      "brand": "Hooshpod"
+    },
+    "auth": {
+      "login": "Log in"
+    },
+    "lang": {
+      "label": "Language",
+      "english": "English",
+      "persian": "Persian",
+      "arabic": "Arabic"
+    }
+  },
+  "services": {
+    "badge": "Unlock Industry-Specific Intelligence",
+    "title": "Tailored Agents for Real-World Impact",
+    "subtitle": "Purpose-built agents for admin, compliance, procurement, aviation, trade, and healthcare — built on Hooshpod's secure, scalable platform.",
+    "cards": [
+      {
+        "title": "Administrative Assistant",
+        "desc": "Automate schedules, email, and docs to free your team."
+      },
+      {
+        "title": "Compliance",
+        "desc": "Monitor, audit, and execute policies with audit trails."
+      },
+      {
+        "title": "Procurement",
+        "desc": "Predict trends, optimize sourcing, and streamline invoices."
+      },
+      {
+        "title": "Aviation",
+        "desc": "Optimize routes, maintenance, and passenger experience."
+      },
+      {
+        "title": "Export/Import",
+        "desc": "Automate customs, track shipments, and assess risks."
+      },
+      {
+        "title": "Healthcare",
+        "desc": "Support triage, notes, and resource allocation safely."
+      }
+    ]
+  }
+}
