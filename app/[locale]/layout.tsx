@@ -13,7 +13,7 @@ const siteUrl = (
 const titles: Record<string, string> = {
   en: "HooshPod — Agentic AI Workflows & Low‑Latency LLM Inference",
   ar: "هوشپاد — تدفقات عمل ذكية بالوكلاء واستدلال منخفض الكمون",
-  fa: "هوشپاد — جریان‌های عامل‌محور و استنتاج کم‌تأخیر LLM",
+  fa: "هوشپاد — ایجنت‌های هوش مصنوعی تخصصی برای سازمان‌ها",
 };
 
 const descriptions: Record<string, string> = {
