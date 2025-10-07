@@ -14,6 +14,7 @@ WEBROOT="/var/www/certbot"
 
 # Email and domains (override via env; or pass domains as arguments)
 EMAIL="${EMAIL:-sepehrxsohrabpour@gmail.com}"
+STAGING="${STAGING:-false}"
 
 # Default domain set; override with DOMAINS env or CLI args
 DEFAULT_DOMAINS=(
@@ -48,10 +49,28 @@ done
 echo "Using volume prefix: $VOLUME_PREFIX"
 echo "Email: $EMAIL"
 echo "Domains: ${DOMAINS[*]}"
+echo "Staging: $STAGING"
+
+args=(certonly --webroot -w "$WEBROOT" \
+  --agree-tos --no-eff-email --non-interactive --email "$EMAIL" \
+  "${domains_args[@]}")
+
+if [[ "$STAGING" == "true" ]]; then
+  args+=( --staging )
+fi
 
 docker run -it --rm --name certbot \
     -v "$VOL_CERT_ETC":/etc/letsencrypt \
     -v "$VOL_CERT_WEBROOT":"$WEBROOT" \
-    certbot/certbot:latest certonly --webroot -w "$WEBROOT" \
-    --agree-tos --no-eff-email --non-interactive --email "$EMAIL" \
-    "${domains_args[@]}"
+    --network host \
+    certbot/certbot:latest "${args[@]}"
+
+echo "Certificates obtained/renewed. Reloading Nginx..."
+# Try docker-compose service name 'nginx' first; fallback to container named 'nginx'
+if docker compose ps nginx >/dev/null 2>&1; then
+  docker compose exec -T nginx nginx -s reload || true
+elif docker ps --format '{{.Names}}' | grep -q '^nginx$'; then
+  docker exec -i nginx nginx -s reload || true
+else
+  echo "Warning: Could not find running nginx container to reload."
+fi

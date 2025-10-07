@@ -25,14 +25,14 @@ const localePath = (locale: string) => `/${locale}`;
 
 const titles: Record<string, string> = {
   en: "HooshPod — Agentic AI Workflows & Low‑Latency LLM Inference",
-  ar: "هوشپاد — تدفقات عمل ذكية بالوكلاء واستدلال منخفض الكمون",
-  fa: "هوشپاد — جریان‌های عامل‌محور و استنتاج کم‌تأخیر LLM",
+  ar: "هوشباد — ایجنت‌های ذكاء اصطناعي متخصصون لصناعتك",
+  fa: "هوشپاد — ایجنت‌های هوش مصنوعی تخصصی برای سازمان‌ها",
 };
 
 const descriptions: Record<string, string> = {
   en: "Design, simulate, orchestrate and monitor agentic AI with GPU streaming, observability and regionalized deployments.",
-  ar: "صمّم وحاكِ ونسّق وراقِب أنظمة ذكاء عاملي مع بث على وحدات GPU ومراقبة ونشر إقليمي.",
-  fa: "طراحی، شبیه‌سازی، ارکستراسیون و پایش هوش عامل‌محور با استریم GPU، مشاهده‌پذیری و استقرار منطقه‌ای.",
+  ar: "صمّم وحاكِ ونسّق و  راقِب أنظمة ذكاء عاملي مع بث على وحدات GPU ومراقبة ونشر إقليمي.",
+  fa: "طراحی، شبیه‌سازی، ارکستراسیون و پایش ایجنت‌های هوش مصنوعی تخصصی برای سازمان‌ها با استریم GPU، مشاهده‌پذیری و استقرار منطقه‌ای.",
 };
 
 export function generateMetadata({ params }: Params): Metadata {
