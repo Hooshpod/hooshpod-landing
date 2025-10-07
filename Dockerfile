@@ -25,5 +25,8 @@ RUN pnpm build
 # Expose the port
 EXPOSE 3000
 
-# Start the application with host set to 0.0.0.0 to allow external access
-CMD ["pnpm", "start", "--", "-p", "3000", "-H", "0.0.0.0"] 
+# Ensure the app binds to all interfaces in containers
+ENV HOSTNAME=0.0.0.0
+
+# Start the application
+CMD ["pnpm", "start"] 
