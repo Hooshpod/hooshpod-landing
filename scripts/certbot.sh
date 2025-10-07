@@ -10,6 +10,12 @@ cd "$PROJECT_ROOT"
 COMPOSE="docker compose"
 WEBROOT="/var/www/certbot"
 
+# Compose volume prefix: defaults to compose project name (repo dir basename)
+DEFAULT_PROJECT_NAME="$(basename "$PROJECT_ROOT")"
+VOLUME_PREFIX="${VOLUME_PREFIX:-$DEFAULT_PROJECT_NAME}"
+VOL_CERT_ETC="${VOLUME_PREFIX}_certbot-etc"
+VOL_CERT_WEBROOT="${VOLUME_PREFIX}_certbot-webroot"
+
 # Defaults (can be overridden via env)
 EMAIL="${EMAIL:-admin@hooshpod.ai}"
 DOMAINS=(
@@ -33,13 +39,13 @@ Commands:
   issue     Issue initial Let's Encrypt certs (web and nginx must be up)
   renew     Run certbot renew once (webroot mode)
   reload    Reload nginx to pick up renewed certs
-  up        Start background certbot renewer service
   help      Show this help
 
 Environment overrides:
   EMAIL      Account email for Let's Encrypt (default: ${EMAIL})
   DOMAINS    Space-separated domains. Example:
              DOMAINS="example.com www.example.com" $0 issue
+  VOLUME_PREFIX  Docker volume prefix (default: ${VOLUME_PREFIX})
 EOF
 }
 
@@ -62,9 +68,10 @@ cmd_issue() {
 
   echo "Issuing certificates for: ${DOMAINS[*]}"
   # Using --non-interactive and --agree-tos for automation
-  $COMPOSE run --rm \
-    -e EMAIL="$EMAIL" \
-    certbot certonly --webroot -w "$WEBROOT" \
+  docker run --rm \
+    -v "$VOL_CERT_ETC":/etc/letsencrypt \
+    -v "$VOL_CERT_WEBROOT":"$WEBROOT" \
+    certbot/certbot:latest certonly --webroot -w "$WEBROOT" \
     $(domains_args) \
     --agree-tos --non-interactive --email "$EMAIL"
 
@@ -74,7 +81,10 @@ cmd_issue() {
 
 cmd_renew() {
   echo "Running certbot renew (webroot: $WEBROOT) ..."
-  $COMPOSE run --rm certbot renew --webroot -w "$WEBROOT" --quiet
+  docker run --rm \
+    -v "$VOL_CERT_ETC":/etc/letsencrypt \
+    -v "$VOL_CERT_WEBROOT":"$WEBROOT" \
+    certbot/certbot:latest renew --webroot -w "$WEBROOT" --quiet
 }
 
 cmd_reload() {
@@ -82,16 +92,10 @@ cmd_reload() {
   $COMPOSE exec nginx nginx -s reload
 }
 
-cmd_up() {
-  echo "Starting background certbot renewer service..."
-  $COMPOSE up -d certbot
-}
-
 case "${1:-help}" in
   issue)  cmd_issue ;;
   renew)  cmd_renew ;;
   reload) cmd_reload ;;
-  up)     cmd_up ;;
   help|*) usage ;;
 esac
 
