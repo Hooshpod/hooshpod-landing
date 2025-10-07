@@ -15,6 +15,8 @@ WEBROOT="/var/www/certbot"
 # Email and domains (override via env; or pass domains as arguments)
 EMAIL="${EMAIL:-sepehrxsohrabpour@gmail.com}"
 STAGING="${STAGING:-false}"
+# Challenge mode: webroot (default) or standalone
+CHALLENGE_MODE="${CHALLENGE_MODE:-webroot}"
 
 # Default domain set; override with DOMAINS env or CLI args
 DEFAULT_DOMAINS=(
@@ -50,10 +52,23 @@ echo "Using volume prefix: $VOLUME_PREFIX"
 echo "Email: $EMAIL"
 echo "Domains: ${DOMAINS[*]}"
 echo "Staging: $STAGING"
+echo "Challenge mode: $CHALLENGE_MODE"
 
-args=(certonly --webroot -w "$WEBROOT" \
-  --agree-tos --no-eff-email --non-interactive --email "$EMAIL" \
+args=(certonly --agree-tos --no-eff-email --non-interactive --email "$EMAIL" \
   "${domains_args[@]}")
+
+if [[ "$CHALLENGE_MODE" == "webroot" ]]; then
+  args=(certonly --webroot -w "$WEBROOT" \
+    --agree-tos --no-eff-email --non-interactive --email "$EMAIL" \
+    "${domains_args[@]}")
+elif [[ "$CHALLENGE_MODE" == "standalone" ]]; then
+  args=(certonly --standalone \
+    --agree-tos --no-eff-email --non-interactive --email "$EMAIL" \
+    "${domains_args[@]}")
+else
+  echo "Error: Unknown CHALLENGE_MODE '$CHALLENGE_MODE'. Use 'webroot' or 'standalone'." >&2
+  exit 1
+fi
 
 if [[ "$STAGING" == "true" ]]; then
   args+=( --staging )
