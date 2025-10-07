@@ -118,7 +118,7 @@ export function Header({
               {t("nav.agents")}
               <ChevronDown className="size-3" />
             </button>
-            <div className="absolute left-0 mt-0.5 hidden group-hover:block">
+            <div className="absolute left-0 mt-0 hidden group-hover:block">
               <div className="grid grid-cols-2 gap-3 p-4 rounded-lg border bg-popover text-popover-foreground shadow-md min-w-[520px]">
                 <Link
                   href={`/${locale}/agents/administrative-assistant`}
