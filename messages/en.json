@@ -3,8 +3,12 @@
     "slogan": "Act Intelligently",
     "nav": {
       "features": "Features",
-      "testimonials": "Testimonials",
-      "faq": "FAQ"
+      "home": "Home",
+      "services": "Services",
+      "howItWorks": "How It Works",
+      "faq": "FAQ",
+      "blog": "Blog",
+      "agents": "Agents"
     },
     "cta": {
       "bookDemo": "Build Your Agent",
@@ -28,37 +32,986 @@
       "english": "English",
       "persian": "Persian",
       "arabic": "Arabic"
+    },
+    "agents": {
+      "menuLabel": "Agents",
+      "administrativeAssistant": "Administrative Assistant",
+      "compliance": "Compliance",
+      "procurement": "Procurement",
+      "aviation": "Aviation",
+      "shipping": "Shipping",
+      "healthcare": "Healthcare"
     }
   },
   "services": {
     "badge": "Unlock Industry-Specific Intelligence",
     "title": "Tailored Agents for Real-World Impact",
     "subtitle": "Purpose-built agents for admin, compliance, procurement, aviation, trade, and healthcare — built on Hooshpod's secure, scalable platform.",
+    "cta": "Learn More",
     "cards": [
       {
         "title": "Administrative Assistant",
-        "desc": "Automate schedules, email, and docs to free your team."
+        "shortDesc": "Automate schedules, email, and docs to free your team.",
+        "description": "Transform your administrative workflow with intelligent automation. Our Administrative Assistant agent handles complex scheduling, email management, document processing, and task coordination. It integrates seamlessly with your existing calendar systems, CRM platforms, and productivity tools to reduce manual work by up to 70% while maintaining accuracy and context awareness.",
+        "features": [
+          "Smart calendar scheduling and conflict resolution",
+          "Automated email categorization and response drafting",
+          "Document processing and data extraction",
+          "Task prioritization and deadline management",
+          "Meeting preparation and follow-up automation"
+        ],
+        "benefits": [
+          "70% reduction in administrative overhead",
+          "24/7 availability for routine tasks",
+          "Seamless integration with existing tools",
+          "Improved accuracy and consistency",
+          "Enhanced team productivity"
+        ]
       },
       {
         "title": "Compliance",
-        "desc": "Monitor, audit, and execute policies with audit trails."
+        "shortDesc": "Monitor, audit, and execute policies with audit trails.",
+        "description": "Ensure regulatory compliance with our specialized Compliance agent. It continuously monitors your operations against industry regulations, automatically generates compliance reports, and maintains comprehensive audit trails. The agent stays updated with changing regulations and can adapt to new compliance requirements across multiple jurisdictions.",
+        "features": [
+          "Real-time regulatory monitoring and alerts",
+          "Automated compliance report generation",
+          "Policy enforcement and violation detection",
+          "Audit trail maintenance and documentation",
+          "Multi-jurisdiction regulatory tracking"
+        ],
+        "benefits": [
+          "99.9% compliance accuracy",
+          "Reduced audit preparation time by 80%",
+          "Proactive risk identification",
+          "Automated documentation and reporting",
+          "Regulatory change notifications"
+        ]
       },
       {
         "title": "Procurement",
-        "desc": "Predict trends, optimize sourcing, and streamline invoices."
+        "shortDesc": "Predict trends, optimize sourcing, and streamline invoices.",
+        "description": "Optimize your procurement process with AI-powered insights and automation. Our Procurement agent analyzes market trends, identifies cost-saving opportunities, manages supplier relationships, and automates invoice processing. It provides predictive analytics for demand forecasting and helps negotiate better terms with suppliers.",
+        "features": [
+          "Market trend analysis and price forecasting",
+          "Supplier performance evaluation and scoring",
+          "Automated invoice processing and approval",
+          "Contract management and renewal tracking",
+          "Cost optimization recommendations"
+        ],
+        "benefits": [
+          "15-25% cost reduction through optimization",
+          "Faster procurement cycle times",
+          "Improved supplier relationships",
+          "Reduced manual processing errors",
+          "Data-driven decision making"
+        ]
       },
       {
         "title": "Aviation",
-        "desc": "Optimize routes, maintenance, and passenger experience."
+        "shortDesc": "Optimize routes, maintenance, and passenger experience.",
+        "description": "Enhance aviation operations with intelligent route optimization, predictive maintenance, and passenger service automation. Our Aviation agent processes real-time flight data, weather information, and operational constraints to optimize routes, predict maintenance needs, and improve passenger experience through personalized service recommendations.",
+        "features": [
+          "Dynamic route optimization and fuel efficiency",
+          "Predictive maintenance scheduling and alerts",
+          "Passenger service personalization",
+          "Weather impact analysis and rerouting",
+          "Operational efficiency monitoring"
+        ],
+        "benefits": [
+          "10-15% fuel cost savings",
+          "Reduced flight delays and cancellations",
+          "Improved passenger satisfaction",
+          "Extended aircraft lifespan through predictive maintenance",
+          "Enhanced operational safety"
+        ]
       },
       {
-        "title": "Export/Import",
-        "desc": "Automate customs, track shipments, and assess risks."
+        "title": "Shipping",
+        "shortDesc": "Optimize logistics, track deliveries, and manage supply chains.",
+        "description": "Streamline your shipping and logistics operations with intelligent route planning, real-time tracking, and supply chain optimization. Our Shipping agent coordinates with carriers, optimizes delivery routes, manages inventory levels, and provides end-to-end visibility across your supply chain network.",
+        "features": [
+          "Intelligent route optimization and planning",
+          "Real-time shipment tracking and updates",
+          "Inventory management and demand forecasting",
+          "Carrier performance monitoring and selection",
+          "Supply chain risk assessment and mitigation"
+        ],
+        "benefits": [
+          "20-30% reduction in shipping costs",
+          "Improved delivery time accuracy",
+          "Enhanced supply chain visibility",
+          "Reduced inventory carrying costs",
+          "Better customer satisfaction"
+        ]
       },
       {
         "title": "Healthcare",
-        "desc": "Support triage, notes, and resource allocation safely."
+        "shortDesc": "Support triage, notes, and resource allocation safely.",
+        "description": "Improve healthcare delivery with AI-powered clinical support, patient triage, and resource optimization. Our Healthcare agent assists with clinical documentation, patient assessment, treatment recommendations, and resource allocation while maintaining strict HIPAA compliance and medical accuracy standards.",
+        "features": [
+          "Intelligent patient triage and prioritization",
+          "Clinical documentation and note generation",
+          "Treatment protocol recommendations",
+          "Resource allocation and scheduling optimization",
+          "Medical literature analysis and insights"
+        ],
+        "benefits": [
+          "Improved patient outcomes and safety",
+          "Reduced administrative burden on staff",
+          "Enhanced clinical decision support",
+          "Optimized resource utilization",
+          "Compliance with medical standards"
+        ]
       }
     ]
+  },
+  "features": {
+    "badge": "Why HooshPod",
+    "title": "Built for Agentic AI at enterprise scale",
+    "subtitle": "Design, simulate, and run multi‑agent workflows on fast, cost‑efficient GPU inference—secure, compliant, and multilingual out‑of‑the‑box.",
+    "items": [
+      {
+        "title": "Agentic workflows",
+        "description": "Design, simulate, and orchestrate multi‑agent systems across the full lifecycle."
+      },
+      {
+        "title": "GPU‑accelerated inference",
+        "description": "Low‑latency streaming with intelligent autoscaling for steady performance."
+      },
+      {
+        "title": "Model flexibility",
+        "description": "Run OSS and proprietary models; swap variants without workflow changes."
+      },
+      {
+        "title": "Enterprise security",
+        "description": "GDPR‑ready, regional data paths, and governance guardrails for production."
+      },
+      {
+        "title": "Observability",
+        "description": "Comprehensive monitoring, debugging, and optimization tools for AI agents."
+      },
+      {
+        "title": "ROI tracking",
+        "description": "Detailed analytics and performance metrics to measure agent effectiveness."
+      }
+    ]
+  },
+  "comparison": {
+    "columns": {
+      "hooshpod": "Hooshpod",
+      "competitors": "Competitors"
+    },
+    "badge": "Why Hooshpod for Specialized Agents?",
+    "title": "Purpose-built where it matters",
+    "subtitle": "Generic AI assistants can't match the precision and efficiency of industry-specific agents.",
+    "rows": [
+      {
+        "feature": "Customization",
+        "hooshpod": "Vertical-tuned models with no-code builder",
+        "competitors": "Generic templates"
+      },
+      {
+        "feature": "Scalability",
+        "hooshpod": "Auto-scales to enterprise loads",
+        "competitors": "Limited integrations"
+      },
+      {
+        "feature": "Security",
+        "hooshpod": "Built-in compliance and audit logs",
+        "competitors": "Add-on only"
+      },
+      {
+        "feature": "Performance",
+        "hooshpod": "Sub-second response times",
+        "competitors": "Variable latency"
+      },
+      {
+        "feature": "ROI",
+        "hooshpod": "20–40% efficiency gains proven",
+        "competitors": "Variable results"
+      }
+    ]
+  },
+  "resources": {
+    "badge": "Get Started Today",
+    "title": "Agent Marketplace, Insights, and Community",
+    "subtitle": "Everything you need to build, deploy, and scale AI agents successfully.",
+    "items": [
+      {
+        "title": "Agent Marketplace",
+        "description": "Browse pre-built templates",
+        "cta": "Explore"
+      },
+      {
+        "title": "Resources",
+        "description": "\"2025 AI Agent Trends Across Industries\"",
+        "cta": "Read Blog"
+      },
+      {
+        "title": "Support",
+        "description": "Join our developer community",
+        "cta": "Connect"
+      }
+    ]
+  },
+  "finalCta": {
+    "badge": "Ready to act intelligently?",
+    "title": "Deploy agents that act intelligently for your business",
+    "subtitle": "Schedule a demo and see how specialized agents accelerate decisions, reduce costs, and ensure compliance.",
+    "cta": "Schedule Demo"
+  },
+  "faq": {
+    "badge": "Frequently Asked Questions",
+    "title": "Everything You Need to Know",
+    "subtitle": "Get answers to common questions about Hooshpod's AI agents and platform capabilities.",
+    "items": {
+      "q1": {
+        "q": "What is Hooshpod and how does it work?",
+        "a": "Hooshpod is an AI platform that creates specialized agents for different industries. Our agents are trained on industry-specific data and can handle complex workflows like compliance monitoring, procurement optimization, and customer service automation. The platform uses advanced language models with low-latency GPU infrastructure to provide real-time, intelligent responses."
+      },
+      "q2": {
+        "q": "Which industries do you support?",
+        "a": "We support multiple industries including healthcare, aviation, shipping, procurement, compliance, and administrative services. Each agent is specifically trained for its industry domain with relevant data, regulations, and best practices to ensure accurate and contextually appropriate responses."
+      },
+      "q3": {
+        "q": "How secure is my data with Hooshpod?",
+        "a": "Security is our top priority. We implement enterprise-grade security measures including end-to-end encryption, GDPR compliance, regional data sovereignty controls, and comprehensive audit trails. All data processing follows strict privacy protocols, and we offer on-premises deployment options for sensitive environments."
+      },
+      "q4": {
+        "q": "Can I customize agents for my specific needs?",
+        "a": "Absolutely! Our platform allows extensive customization of agents. You can train agents on your specific data, adjust their behavior and responses, integrate with your existing systems, and create custom workflows. Our no-code builder makes it easy to configure agents without technical expertise."
+      },
+      "q5": {
+        "q": "What's the difference between Hooshpod and generic AI assistants?",
+        "a": "Unlike generic AI assistants, Hooshpod agents are purpose-built for specific industries and use cases. They understand industry terminology, regulations, and workflows. Our agents are trained on specialized data and can handle complex, multi-step processes that generic assistants cannot manage effectively."
+      },
+      "q6": {
+        "q": "How do I get started with Hooshpod?",
+        "a": "Getting started is simple! Contact our team to schedule a demo where we'll assess your needs and show you how Hooshpod can solve your specific challenges. We'll help you choose the right agents, set up integrations, and provide training for your team. Most implementations are up and running within 2-4 weeks."
+      },
+      "q7": {
+        "q": "What kind of ROI can I expect?",
+        "a": "Our clients typically see 20-40% efficiency gains within the first 3 months. This comes from reduced manual work, faster response times, improved accuracy, and better resource allocation. We provide detailed analytics to track your ROI and can help you optimize your agents for maximum impact."
+      },
+      "q8": {
+        "q": "Do you offer support and training?",
+        "a": "Yes! We provide comprehensive onboarding, training sessions for your team, 24/7 technical support, and regular check-ins to ensure your agents are performing optimally. Our success team works closely with you to maximize the value of your AI investment."
+      }
+    }
+  },
+  "how": {
+    "badge": "Simple Process",
+    "title": "How Hooshpod Works",
+    "subtitle": "From design to deployment, our streamlined process gets your AI agents up and running quickly.",
+    "steps": {
+      "architect": {
+        "title": "Architect",
+        "desc": "Define your agent's purpose, capabilities, and integration requirements with our expert team."
+      },
+      "simulate": {
+        "title": "Simulate",
+        "desc": "Test and refine your agent in a safe environment before deployment to ensure optimal performance."
+      },
+      "orchestrate": {
+        "title": "Orchestrate",
+        "desc": "Deploy your agent with seamless integration into your existing workflows and systems."
+      },
+      "monitor": {
+        "title": "Monitor",
+        "desc": "Track performance, optimize results, and scale your AI agents as your business grows."
+      }
+    }
+  },
+  "agentsMenu": {
+    "menuLabel": "Agents",
+    "administrativeAssistant": "Administrative Assistant",
+    "compliance": "Compliance",
+    "procurement": "Procurement",
+    "aviation": "Aviation",
+    "shipping": "Shipping",
+    "healthcare": "Healthcare"
+  },
+  "agents": {
+    "administrative-assistant": {
+      "badge": "Administrative AI Agent",
+      "title": "Administrative Assistant Agent",
+      "subtitle": "Streamline your administrative tasks with intelligent automation that handles scheduling, email management, and document processing.",
+      "description": {
+        "title": "Intelligent Administrative Automation",
+        "content": "Our Administrative Assistant Agent revolutionizes how you handle routine tasks. It intelligently manages your calendar, processes emails, organizes documents, and coordinates meetings while learning your preferences to provide increasingly personalized service.",
+        "features": [
+          "Smart calendar management and scheduling",
+          "Automated email processing and responses",
+          "Document organization and retrieval",
+          "Meeting coordination and follow-ups"
+        ],
+        "visual": "AI-powered administrative efficiency"
+      },
+      "howItWorks": {
+        "title": "How Our Administrative Agent Works",
+        "subtitle": "Four simple steps to transform your administrative workflow",
+        "steps": [
+          {
+            "title": "Integration Setup",
+            "description": "Connect your calendar, email, and document systems to our secure platform."
+          },
+          {
+            "title": "Preference Learning",
+            "description": "The agent learns your scheduling patterns, communication style, and organizational preferences."
+          },
+          {
+            "title": "Task Automation",
+            "description": "Automatically handles routine tasks like scheduling, email sorting, and document organization."
+          },
+          {
+            "title": "Continuous Optimization",
+            "description": "Continuously improves performance based on your feedback and usage patterns."
+          }
+        ]
+      },
+      "flow": {
+        "title": "Administrative Workflow",
+        "subtitle": "See how our agent streamlines your daily administrative tasks",
+        "steps": [
+          {
+            "title": "Email Processing",
+            "description": "Automatically categorizes, prioritizes, and responds to emails based on content and sender importance."
+          },
+          {
+            "title": "Calendar Management",
+            "description": "Schedules meetings, sends reminders, and handles conflicts while respecting your availability preferences."
+          },
+          {
+            "title": "Document Organization",
+            "description": "Sorts, tags, and organizes documents while maintaining your preferred filing system structure."
+          },
+          {
+            "title": "Meeting Coordination",
+            "description": "Coordinates with multiple parties to find optimal meeting times and sends calendar invitations."
+          },
+          {
+            "title": "Follow-up Actions",
+            "description": "Tracks action items, sends reminders, and ensures nothing falls through the cracks."
+          }
+        ]
+      },
+      "benefits": {
+        "title": "Why Choose Our Administrative Agent",
+        "subtitle": "Transform your productivity with intelligent administrative automation",
+        "items": [
+          {
+            "title": "Time Savings",
+            "description": "Save 10-15 hours per week on routine administrative tasks"
+          },
+          {
+            "title": "Improved Organization",
+            "description": "Never miss important emails or meetings with intelligent prioritization"
+          },
+          {
+            "title": "Consistent Quality",
+            "description": "Maintain professional communication standards across all interactions"
+          },
+          {
+            "title": "Scalable Efficiency",
+            "description": "Handle increasing administrative load without proportional resource increase"
+          },
+          {
+            "title": "24/7 Availability",
+            "description": "Process emails and schedule meetings even outside business hours"
+          },
+          {
+            "title": "Learning Capability",
+            "description": "Continuously improves by learning your preferences and work patterns"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Automate Your Administrative Tasks?",
+        "subtitle": "Join hundreds of professionals who have transformed their productivity with our Administrative Assistant Agent.",
+        "primary": "Schedule Demo",
+        "secondary": "Learn More"
+      }
+    },
+    "compliance": {
+      "badge": "Compliance AI Agent",
+      "title": "Compliance Monitoring Agent",
+      "subtitle": "Ensure regulatory compliance with intelligent monitoring, audit trails, and automated policy enforcement.",
+      "description": {
+        "title": "Intelligent Compliance Management",
+        "content": "Our Compliance Agent provides comprehensive monitoring and enforcement of regulatory requirements. It continuously tracks policy adherence, generates audit reports, and alerts you to potential compliance issues before they become problems.",
+        "features": [
+          "Real-time compliance monitoring",
+          "Automated audit trail generation",
+          "Policy violation detection",
+          "Regulatory update tracking"
+        ],
+        "visual": "AI-powered compliance assurance"
+      },
+      "howItWorks": {
+        "title": "How Our Compliance Agent Works",
+        "subtitle": "Four-step process to ensure comprehensive compliance coverage",
+        "steps": [
+          {
+            "title": "Policy Integration",
+            "description": "Upload and configure your compliance policies, regulations, and requirements."
+          },
+          {
+            "title": "Continuous Monitoring",
+            "description": "Monitor all activities and transactions against compliance requirements in real-time."
+          },
+          {
+            "title": "Issue Detection",
+            "description": "Identify potential violations and compliance gaps before they escalate."
+          },
+          {
+            "title": "Reporting & Remediation",
+            "description": "Generate detailed reports and provide remediation recommendations."
+          }
+        ]
+      },
+      "flow": {
+        "title": "Compliance Workflow",
+        "subtitle": "Comprehensive compliance management from monitoring to reporting",
+        "steps": [
+          {
+            "title": "Policy Analysis",
+            "description": "Analyzes new regulations and updates existing policies to maintain compliance."
+          },
+          {
+            "title": "Activity Monitoring",
+            "description": "Continuously monitors all business activities against compliance requirements."
+          },
+          {
+            "title": "Risk Assessment",
+            "description": "Evaluates potential compliance risks and prioritizes them based on severity."
+          },
+          {
+            "title": "Violation Detection",
+            "description": "Identifies and flags potential compliance violations for immediate attention."
+          },
+          {
+            "title": "Audit Trail Generation",
+            "description": "Creates comprehensive audit trails for regulatory reporting and internal reviews."
+          }
+        ]
+      },
+      "benefits": {
+        "title": "Why Choose Our Compliance Agent",
+        "subtitle": "Reduce compliance risks and ensure regulatory adherence",
+        "items": [
+          {
+            "title": "Risk Reduction",
+            "description": "Minimize compliance violations and associated penalties"
+          },
+          {
+            "title": "Automated Monitoring",
+            "description": "24/7 monitoring without manual oversight requirements"
+          },
+          {
+            "title": "Audit Readiness",
+            "description": "Maintain comprehensive audit trails for regulatory inspections"
+          },
+          {
+            "title": "Cost Efficiency",
+            "description": "Reduce compliance management costs by up to 60%"
+          },
+          {
+            "title": "Regulatory Updates",
+            "description": "Stay current with changing regulations and requirements"
+          },
+          {
+            "title": "Proactive Alerts",
+            "description": "Get early warnings about potential compliance issues"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Strengthen Your Compliance Program?",
+        "subtitle": "Ensure regulatory compliance with intelligent monitoring and automated enforcement.",
+        "primary": "Schedule Demo",
+        "secondary": "Learn More"
+      }
+    },
+    "procurement": {
+      "badge": "Procurement AI Agent",
+      "title": "Procurement Optimization Agent",
+      "subtitle": "Optimize your procurement processes with intelligent sourcing, supplier management, and cost analysis.",
+      "description": {
+        "title": "Intelligent Procurement Management",
+        "content": "Our Procurement Agent revolutionizes how you manage suppliers, negotiate contracts, and optimize purchasing decisions. It analyzes market trends, evaluates supplier performance, and provides data-driven recommendations for cost savings and efficiency improvements.",
+        "features": [
+          "Intelligent supplier evaluation",
+          "Market trend analysis",
+          "Cost optimization recommendations",
+          "Contract management automation"
+        ],
+        "visual": "AI-powered procurement optimization"
+      },
+      "howItWorks": {
+        "title": "How Our Procurement Agent Works",
+        "subtitle": "Transform your procurement with intelligent automation",
+        "steps": [
+          {
+            "title": "Data Integration",
+            "description": "Connect your procurement systems and supplier databases for comprehensive analysis."
+          },
+          {
+            "title": "Market Analysis",
+            "description": "Analyze market trends, pricing, and supplier performance in real-time."
+          },
+          {
+            "title": "Optimization Recommendations",
+            "description": "Generate actionable insights for cost reduction and process improvement."
+          },
+          {
+            "title": "Automated Execution",
+            "description": "Execute procurement decisions based on predefined criteria and optimization goals."
+          }
+        ]
+      },
+      "flow": {
+        "title": "Procurement Workflow",
+        "subtitle": "End-to-end procurement optimization from sourcing to delivery",
+        "steps": [
+          {
+            "title": "Demand Analysis",
+            "description": "Analyze purchasing patterns and predict future procurement needs."
+          },
+          {
+            "title": "Supplier Evaluation",
+            "description": "Continuously evaluate supplier performance, pricing, and reliability."
+          },
+          {
+            "title": "Market Intelligence",
+            "description": "Monitor market conditions and identify cost-saving opportunities."
+          },
+          {
+            "title": "Contract Optimization",
+            "description": "Optimize contract terms and negotiate better pricing with suppliers."
+          },
+          {
+            "title": "Performance Tracking",
+            "description": "Track procurement KPIs and measure cost savings and efficiency gains."
+          }
+        ]
+      },
+      "benefits": {
+        "title": "Why Choose Our Procurement Agent",
+        "subtitle": "Maximize value and minimize costs in your procurement operations",
+        "items": [
+          {
+            "title": "Cost Reduction",
+            "description": "Achieve 15-25% cost savings through optimized supplier selection and negotiation"
+          },
+          {
+            "title": "Supplier Intelligence",
+            "description": "Make data-driven decisions with comprehensive supplier performance analysis"
+          },
+          {
+            "title": "Market Insights",
+            "description": "Stay ahead of market trends and pricing fluctuations"
+          },
+          {
+            "title": "Process Automation",
+            "description": "Automate routine procurement tasks and approval workflows"
+          },
+          {
+            "title": "Risk Mitigation",
+            "description": "Identify and mitigate supplier risks before they impact your operations"
+          },
+          {
+            "title": "Compliance Assurance",
+            "description": "Ensure procurement activities meet regulatory and internal policy requirements"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Optimize Your Procurement Process?",
+        "subtitle": "Transform your procurement with intelligent automation and data-driven insights.",
+        "primary": "Schedule Demo",
+        "secondary": "Learn More"
+      }
+    },
+    "aviation": {
+      "badge": "Aviation AI Agent",
+      "title": "Aviation Operations Agent",
+      "subtitle": "Optimize flight operations, maintenance scheduling, and passenger experience with specialized aviation AI.",
+      "description": {
+        "title": "Intelligent Aviation Management",
+        "content": "Our Aviation Agent is specifically designed for the aviation industry, handling complex operations including flight planning, maintenance scheduling, crew management, and passenger services. It integrates with existing aviation systems to provide real-time optimization and decision support.",
+        "features": [
+          "Flight route optimization",
+          "Maintenance scheduling automation",
+          "Crew resource management",
+          "Passenger experience enhancement"
+        ],
+        "visual": "AI-powered aviation excellence"
+      },
+      "howItWorks": {
+        "title": "How Our Aviation Agent Works",
+        "subtitle": "Specialized AI for aviation industry challenges",
+        "steps": [
+          {
+            "title": "System Integration",
+            "description": "Integrate with your existing aviation management systems and databases."
+          },
+          {
+            "title": "Data Analysis",
+            "description": "Analyze flight data, weather patterns, and operational constraints in real-time."
+          },
+          {
+            "title": "Optimization Engine",
+            "description": "Optimize routes, schedules, and resource allocation for maximum efficiency."
+          },
+          {
+            "title": "Decision Support",
+            "description": "Provide real-time recommendations for operational decisions and contingency planning."
+          }
+        ]
+      },
+      "flow": {
+        "title": "Aviation Operations Workflow",
+        "subtitle": "Comprehensive aviation management from planning to execution",
+        "steps": [
+          {
+            "title": "Flight Planning",
+            "description": "Optimize flight routes considering weather, airspace, and operational constraints."
+          },
+          {
+            "title": "Resource Allocation",
+            "description": "Optimize aircraft, crew, and ground resource allocation for maximum efficiency."
+          },
+          {
+            "title": "Maintenance Scheduling",
+            "description": "Schedule maintenance activities to minimize operational disruption."
+          },
+          {
+            "title": "Passenger Management",
+            "description": "Enhance passenger experience through intelligent service optimization."
+          },
+          {
+            "title": "Performance Monitoring",
+            "description": "Monitor operational performance and identify improvement opportunities."
+          }
+        ]
+      },
+      "benefits": {
+        "title": "Why Choose Our Aviation Agent",
+        "subtitle": "Enhance aviation operations with specialized AI intelligence",
+        "items": [
+          {
+            "title": "Operational Efficiency",
+            "description": "Improve on-time performance and reduce operational costs by 20-30%"
+          },
+          {
+            "title": "Fuel Optimization",
+            "description": "Reduce fuel consumption through optimized routing and scheduling"
+          },
+          {
+            "title": "Maintenance Intelligence",
+            "description": "Predict maintenance needs and optimize scheduling for minimal disruption"
+          },
+          {
+            "title": "Crew Optimization",
+            "description": "Optimize crew scheduling and resource allocation for maximum productivity"
+          },
+          {
+            "title": "Passenger Satisfaction",
+            "description": "Enhance passenger experience through intelligent service delivery"
+          },
+          {
+            "title": "Regulatory Compliance",
+            "description": "Ensure compliance with aviation regulations and safety standards"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Optimize Your Aviation Operations?",
+        "subtitle": "Transform your aviation operations with specialized AI intelligence and automation.",
+        "primary": "Schedule Demo",
+        "secondary": "Learn More"
+      }
+    },
+    "shipping": {
+      "badge": "Shipping AI Agent",
+      "title": "Shipping & Logistics Agent",
+      "subtitle": "Optimize logistics, track deliveries, and manage supply chains with intelligent shipping automation.",
+      "description": {
+        "title": "Intelligent Logistics Management",
+        "content": "Our Shipping Agent streamlines logistics operations by optimizing routes, managing inventory, tracking shipments, and coordinating with carriers. It provides real-time visibility into your supply chain and automates complex logistics decisions.",
+        "features": [
+          "Route optimization",
+          "Inventory management",
+          "Real-time tracking",
+          "Carrier coordination"
+        ],
+        "visual": "AI-powered logistics optimization"
+      },
+      "howItWorks": {
+        "title": "How Our Shipping Agent Works",
+        "subtitle": "Four-step process to optimize your logistics operations",
+        "steps": [
+          {
+            "title": "System Integration",
+            "description": "Connect with your WMS, TMS, and carrier systems for unified logistics management."
+          },
+          {
+            "title": "Route Optimization",
+            "description": "Optimize delivery routes considering traffic, weather, and delivery constraints."
+          },
+          {
+            "title": "Inventory Intelligence",
+            "description": "Manage inventory levels and predict demand to prevent stockouts and overstock."
+          },
+          {
+            "title": "Performance Monitoring",
+            "description": "Track KPIs and provide insights for continuous logistics improvement."
+          }
+        ]
+      },
+      "flow": {
+        "title": "Shipping Workflow",
+        "subtitle": "End-to-end logistics optimization from order to delivery",
+        "steps": [
+          {
+            "title": "Order Processing",
+            "description": "Automatically process orders and determine optimal fulfillment strategies."
+          },
+          {
+            "title": "Route Planning",
+            "description": "Plan optimal delivery routes considering multiple constraints and objectives."
+          },
+          {
+            "title": "Carrier Selection",
+            "description": "Select the best carrier and service level for each shipment."
+          },
+          {
+            "title": "Tracking & Updates",
+            "description": "Provide real-time tracking and automated customer updates."
+          },
+          {
+            "title": "Performance Analysis",
+            "description": "Analyze delivery performance and identify optimization opportunities."
+          }
+        ]
+      },
+      "benefits": {
+        "title": "Why Choose Our Shipping Agent",
+        "subtitle": "Optimize logistics operations and enhance customer satisfaction",
+        "items": [
+          {
+            "title": "Cost Reduction",
+            "description": "Reduce shipping costs by 15-25% through optimized routing and carrier selection"
+          },
+          {
+            "title": "Delivery Speed",
+            "description": "Improve delivery times and on-time performance"
+          },
+          {
+            "title": "Inventory Optimization",
+            "description": "Reduce inventory costs while maintaining service levels"
+          },
+          {
+            "title": "Customer Experience",
+            "description": "Enhance customer satisfaction with accurate tracking and delivery updates"
+          },
+          {
+            "title": "Operational Visibility",
+            "description": "Gain real-time visibility into logistics performance and bottlenecks"
+          },
+          {
+            "title": "Scalable Operations",
+            "description": "Handle increasing shipping volume without proportional cost increases"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Optimize Your Shipping Operations?",
+        "subtitle": "Transform your logistics with intelligent automation and optimization.",
+        "primary": "Schedule Demo",
+        "secondary": "Learn More"
+      }
+    },
+    "healthcare": {
+      "badge": "Healthcare AI Agent",
+      "title": "Healthcare Support Agent",
+      "subtitle": "Enhance patient care with intelligent triage, documentation, and resource allocation in healthcare settings.",
+      "description": {
+        "title": "Intelligent Healthcare Support",
+        "content": "Our Healthcare Agent supports medical professionals by handling administrative tasks, patient triage, documentation, and resource allocation. It maintains strict compliance with healthcare regulations while improving operational efficiency and patient care quality.",
+        "features": [
+          "Intelligent patient triage",
+          "Automated documentation",
+          "Resource allocation optimization",
+          "Compliance monitoring"
+        ],
+        "visual": "AI-powered healthcare excellence"
+      },
+      "howItWorks": {
+        "title": "How Our Healthcare Agent Works",
+        "subtitle": "Four-step process to enhance healthcare operations",
+        "steps": [
+          {
+            "title": "System Integration",
+            "description": "Integrate with your EHR, scheduling, and patient management systems."
+          },
+          {
+            "title": "Patient Analysis",
+            "description": "Analyze patient data to support triage and care planning decisions."
+          },
+          {
+            "title": "Resource Optimization",
+            "description": "Optimize staff scheduling and resource allocation for maximum efficiency."
+          },
+          {
+            "title": "Compliance Assurance",
+            "description": "Ensure all operations meet healthcare regulations and privacy requirements."
+          }
+        ]
+      },
+      "flow": {
+        "title": "Healthcare Workflow",
+        "subtitle": "Comprehensive healthcare support from intake to discharge",
+        "steps": [
+          {
+            "title": "Patient Intake",
+            "description": "Streamline patient registration and initial assessment processes."
+          },
+          {
+            "title": "Triage Support",
+            "description": "Assist with patient triage and priority assessment based on symptoms and history."
+          },
+          {
+            "title": "Documentation",
+            "description": "Automate routine documentation and maintain accurate patient records."
+          },
+          {
+            "title": "Resource Coordination",
+            "description": "Optimize staff scheduling and resource allocation for patient care."
+          },
+          {
+            "title": "Follow-up Care",
+            "description": "Coordinate follow-up appointments and care plan adherence."
+          }
+        ]
+      },
+      "benefits": {
+        "title": "Why Choose Our Healthcare Agent",
+        "subtitle": "Enhance patient care while improving operational efficiency",
+        "items": [
+          {
+            "title": "Improved Efficiency",
+            "description": "Reduce administrative burden and improve staff productivity by 25-35%"
+          },
+          {
+            "title": "Better Patient Care",
+            "description": "Enhance patient experience through optimized scheduling and resource allocation"
+          },
+          {
+            "title": "Compliance Assurance",
+            "description": "Maintain strict compliance with healthcare regulations and privacy laws"
+          },
+          {
+            "title": "Cost Optimization",
+            "description": "Reduce operational costs while maintaining or improving care quality"
+          },
+          {
+            "title": "Data Security",
+            "description": "Ensure patient data security and privacy with enterprise-grade protection"
+          },
+          {
+            "title": "Scalable Operations",
+            "description": "Handle increasing patient volume without compromising care quality"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Enhance Your Healthcare Operations?",
+        "subtitle": "Transform healthcare delivery with intelligent automation and support.",
+        "primary": "Schedule Demo",
+        "secondary": "Learn More"
+      }
+    }
+  },
+  "footer": {
+    "brand": "Hooshpod",
+    "description": "Deploy specialized AI agents for your industry. Built for enterprise scale with security, compliance, and multilingual support out of the box.",
+    "contact": {
+      "email": "hello@hooshpod.com",
+      "phone": "+919622523921",
+      "address": "North Modarres - Elahiyeh Entrance - Bidar St. - No. 5 (Jam Tower) - 1st Floor - Unit 4",
+      "postalCode": "1964914115"
+    },
+    "social": {
+      "github": "https://github.com/hooshpod",
+      "twitter": "https://twitter.com/hooshpod",
+      "linkedin": "https://linkedin.com/company/hooshpod",
+      "youtube": "https://youtube.com/@hooshpod",
+      "instagram": "https://instagram.com/hooshpod"
+    },
+    "sections": {
+      "product": {
+        "title": "Product",
+        "features": "Features",
+        "services": "Services",
+        "integrations": "Integrations",
+        "api": "API",
+        "pricing": "Pricing"
+      },
+      "resources": {
+        "title": "Resources",
+        "documentation": "Documentation",
+        "guides": "Guides",
+        "blog": "Blog",
+        "support": "Support",
+        "community": "Community"
+      },
+      "company": {
+        "title": "Company",
+        "about": "About",
+        "careers": "Careers",
+        "press": "Press",
+        "partners": "Partners"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "cookies": "Cookie Policy",
+        "security": "Security"
+      }
+    },
+    "copyright": "© {year} Hooshpod. All rights reserved."
+  },
+  "blog": {
+    "meta": {
+      "title": "Hooshpod Blog - AI Agents & Industry Insights",
+      "description": "Discover the latest insights on AI agents, industry automation, and the future of intelligent work. Expert articles on healthcare, aviation, procurement, and more."
+    },
+    "title": "Hooshpod Blog",
+    "subtitle": "Insights, trends, and expert perspectives on AI agents and industry automation",
+    "readMore": "Read More",
+    "backToBlog": "Back to Blog",
+    "publishedOn": "Published on",
+    "by": "by",
+    "tags": "Tags:",
+    "featured": "Featured",
+    "noPosts": "No blog posts found.",
+    "loading": "Loading posts...",
+    "error": "Error loading posts. Please try again later."
+  },
+  "errors": {
+    "404": {
+      "message": "Page not found"
+    },
+    "500": {
+      "message": "Error loading page. Please try again later."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "The link may be outdated or the page has been deleted.",
+      "goHome": "Go to Home"
+    },
+    "backHome": "Back to Home"
   }
 }

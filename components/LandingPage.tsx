@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { CalendlyModal } from "@/components/calendly-modal";
+import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { Features } from "@/components/landing/Features";
@@ -11,17 +12,24 @@ import { Comparison } from "@/components/landing/Comparison";
 import { Resources } from "@/components/landing/Resources";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { HowItWorks } from "@/components/landing/HowItWorks";
-import { Testimonials } from "@/components/landing/Testimonials";
 import { FAQ } from "@/components/landing/FAQ";
-import { CTA } from "@/components/landing/CTA";
+// import { CTA } from "@/components/landing/CTA";
 import { Footer } from "@/components/landing/Footer";
+import type { BlogPost } from "@/lib/blog";
+import { BlogList } from "@/components/blog/BlogList";
 
-export default function LandingPage() {
+type LandingPageProps = {
+  posts?: BlogPost[];
+};
+
+export default function LandingPage({ posts }: LandingPageProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [calendlyModalOpen, setCalendlyModalOpen] = useState(false);
+  // Removed Calendly modal state
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const locale = useLocale();
+  const tBlog = useTranslations("blog");
 
   useEffect(() => {
     setMounted(true);
@@ -41,20 +49,13 @@ export default function LandingPage() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  const openCalendlyModal = () => {
-    setCalendlyModalOpen(true);
-  };
-
-  const closeCalendlyModal = () => {
-    setCalendlyModalOpen(false);
-  };
-
-  const openCalendlyDirect = () => {
-    window.open(
-      "https://calendly.com/echorift-ai",
-      "_blank",
-      "noopener,noreferrer"
-    );
+  const handlePrimaryCTA = () => {
+    const el = document.getElementById("contact");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    window.location.href = "mailto:hooshpod.ai@gmail.com";
   };
 
   return (
@@ -66,22 +67,36 @@ export default function LandingPage() {
         toggleTheme={toggleTheme}
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
-        openCalendlyDirect={openCalendlyDirect}
       />
       <main className="flex-1">
-        <Hero openCalendlyDirect={openCalendlyDirect} />
+        <Hero />
         <Features />
-        <Services onPrimaryCTA={openCalendlyDirect} />
-        <Comparison />
-        <Resources onPrimaryCTA={openCalendlyDirect} />
+        <Services onPrimaryCTA={handlePrimaryCTA} />
+        {/* <Comparison /> */}
+        {/* <Resources /> */}
+        {posts && posts.length > 0 && (
+          <section className="w-full py-16">
+            <div className="container px-4 md:px-6">
+              <div className="flex items-center justify-between mb-8">
+                <h2 className="text-3xl font-bold tracking-tight">
+                  {tBlog("title")}
+                </h2>
+                <Link
+                  href={`/${locale}/blog`}
+                  className="text-primary hover:text-primary/80 font-medium"
+                >
+                  {tBlog("readMore")}
+                </Link>
+              </div>
+              <BlogList posts={posts} />
+            </div>
+          </section>
+        )}
         <HowItWorks />
-        <Testimonials />
         <FAQ />
-        <FinalCTA onPrimaryCTA={openCalendlyDirect} />
+        <FinalCTA onPrimaryCTA={handlePrimaryCTA} />
       </main>
       <Footer />
-
-      <CalendlyModal isOpen={calendlyModalOpen} onClose={closeCalendlyModal} />
     </div>
   );
 }

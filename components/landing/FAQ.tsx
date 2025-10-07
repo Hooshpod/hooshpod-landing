@@ -11,7 +11,7 @@ import {
 import { useTranslations } from "next-intl";
 
 export function FAQ() {
-  const t = useTranslations("common");
+  const t = useTranslations();
   const faqs = [
     { question: t("faq.items.q1.q"), answer: t("faq.items.q1.a") },
     { question: t("faq.items.q2.q"), answer: t("faq.items.q2.a") },
@@ -19,6 +19,8 @@ export function FAQ() {
     { question: t("faq.items.q4.q"), answer: t("faq.items.q4.a") },
     { question: t("faq.items.q5.q"), answer: t("faq.items.q5.a") },
     { question: t("faq.items.q6.q"), answer: t("faq.items.q6.a") },
+    { question: t("faq.items.q7.q"), answer: t("faq.items.q7.a") },
+    { question: t("faq.items.q8.q"), answer: t("faq.items.q8.a") },
   ];
 
   return (

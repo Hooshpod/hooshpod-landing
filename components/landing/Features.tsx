@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Zap, Layers, Shield, Activity, BarChart3 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const container = {
   hidden: { opacity: 0 },
@@ -19,68 +20,61 @@ const item = {
 };
 
 export function Features() {
+  const t = useTranslations("features");
   const features = [
     {
-      title: "Agentic workflows",
-      description:
-        "Design, simulate, and orchestrate multi‑agent systems across the full lifecycle.",
+      title: t("items.0.title"),
+      description: t("items.0.description"),
       icon: <Users className="size-5" />,
     },
     {
-      title: "GPU‑accelerated inference",
-      description:
-        "Streaming, autoscaling inference with low latency and optimal cost per token.",
+      title: t("items.1.title"),
+      description: t("items.1.description"),
       icon: <Zap className="size-5" />,
     },
     {
-      title: "Security & regionalization",
-      description:
-        "GDPR‑ready with regional data controls; SOC 2/ISO 27001 available upon request.",
+      title: t("items.2.title"),
+      description: t("items.2.description"),
       icon: <Shield className="size-5" />,
     },
     {
-      title: "Seamless integrations",
-      description:
-        "Connect to your tools, data sources, and runtime environments with ease.",
+      title: t("items.3.title"),
+      description: t("items.3.description"),
       icon: <Layers className="size-5" />,
     },
     {
-      title: "Observability & guardrails",
-      description:
-        "Trace agents end‑to‑end, enforce policies, and monitor quality with built‑in tooling.",
+      title: t("items.4.title"),
+      description: t("items.4.description"),
       icon: <Activity className="size-5" />,
     },
     {
-      title: "Evaluation & simulation",
-      description:
-        "Assess prompts and agents with scenario simulation to improve reliability before launch.",
+      title: t("items.5.title"),
+      description: t("items.5.description"),
       icon: <BarChart3 className="size-5" />,
     },
   ];
 
   return (
-    <section id="features" className="w-full py-20 md:py-32">
+    <section id="features" className="w-full py-14 md:py-24">
       <div className="container px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+          className="flex flex-col items-center justify-center space-y-4 text-center mb-10 md:mb-12"
         >
           <Badge
             className="rounded-full px-4 py-1.5 text-sm font-medium"
             variant="secondary"
           >
-            Why HooshPod
+            {t("badge")}
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Built for Agentic AI at enterprise scale
+          <h2 className="text-2xl md:text-4xl font-bold tracking-tight">
+            {t("title")}
           </h2>
-          <p className="max-w-[800px] text-muted-foreground md:text-lg">
-            Design, simulate, and run multi‑agent workflows on fast,
-            cost‑efficient GPU inference—secure, compliant, and multilingual
-            out‑of‑the‑box.
+          <p className="max-w-[800px] text-muted-foreground text-base md:text-lg">
+            {t("subtitle")}
           </p>
         </motion.div>
 

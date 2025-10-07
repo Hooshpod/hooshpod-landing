@@ -4,43 +4,48 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 type ResourcesProps = {
   onPrimaryCTA?: () => void;
 };
 
 export function Resources({ onPrimaryCTA }: ResourcesProps) {
+  const t = useTranslations("resources");
   const items = [
     {
-      title: "Agent Marketplace",
-      description: "Browse pre-built templates",
-      cta: "Explore",
+      title: t("items.0.title"),
+      description: t("items.0.description"),
+      cta: t("items.0.cta"),
     },
     {
-      title: "Resources",
-      description: '"2025 AI Agent Trends Across Industries"',
-      cta: "Read Blog",
+      title: t("items.1.title"),
+      description: t("items.1.description"),
+      cta: t("items.1.cta"),
     },
     {
-      title: "Support",
-      description: "Join our developer community",
-      cta: "Connect",
+      title: t("items.2.title"),
+      description: t("items.2.description"),
+      cta: t("items.2.cta"),
     },
   ];
 
   return (
-    <section className="w-full py-20 md:py-32">
+    <section id="resources" className="w-full py-20 md:py-32">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center text-center mb-10 space-y-4">
           <Badge
             className="rounded-full px-4 py-1.5 text-sm font-medium"
             variant="secondary"
           >
-            Get Started Today
+            {t("badge")}
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Agent Marketplace, Insights, and Community
+            {t("title")}
           </h2>
+          <p className="max-w-[600px] text-muted-foreground md:text-lg">
+            {t("subtitle")}
+          </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

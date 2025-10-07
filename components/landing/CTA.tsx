@@ -5,11 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-type CTAProps = {
-  openCalendlyDirect: () => void;
-};
-
-export function CTA({ openCalendlyDirect }: CTAProps) {
+export function CTA() {
   const t = useTranslations("common");
   return (
     <section className="w-full py-20 md:py-32 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground relative overflow-hidden">
@@ -36,7 +32,14 @@ export function CTA({ openCalendlyDirect }: CTAProps) {
               size="lg"
               variant="secondary"
               className="rounded-full h-12 px-8 text-base"
-              onClick={openCalendlyDirect}
+              onClick={() => {
+                const el = document.getElementById("contact");
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth", block: "start" });
+                  return;
+                }
+                window.location.href = "mailto:hooshpod.ai@gmail.com";
+              }}
             >
               {t("cta.bookDemo")}
               <ExternalLink className="ml-2 size-4" />

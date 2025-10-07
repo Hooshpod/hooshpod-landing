@@ -8,11 +8,18 @@ import {
   X,
   Moon,
   Sun,
-  ExternalLink,
   LanguagesIcon,
   Sparkles,
+  ClipboardList,
+  ShieldCheck,
+  ShoppingCart,
+  Plane,
+  Ship,
+  HeartPulse,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import {
   DropdownMenu,
@@ -22,15 +29,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 
 type HeaderProps = {
   isScrolled: boolean;
-  mounted: boolean;
-  theme: string | undefined;
-  toggleTheme: () => void;
-  mobileMenuOpen: boolean;
-  setMobileMenuOpen: (open: boolean) => void;
-  openCalendlyDirect: () => void;
+  mounted?: boolean;
+  theme?: string | undefined;
+  toggleTheme?: () => void;
+  mobileMenuOpen?: boolean;
+  setMobileMenuOpen?: (open: boolean) => void;
 };
 
 export function Header({
@@ -40,10 +47,26 @@ export function Header({
   toggleTheme,
   mobileMenuOpen,
   setMobileMenuOpen,
-  openCalendlyDirect,
 }: HeaderProps) {
   const t = useTranslations("common");
+  const ts = useTranslations("services");
+  const locale = useLocale();
   const pathname = usePathname();
+  const { theme: themeFromProvider, setTheme } = useTheme();
+  const [mountedInternal, setMountedInternal] = useState(false);
+  useEffect(() => setMountedInternal(true), []);
+
+  const effectiveTheme = theme ?? themeFromProvider ?? "system";
+  const isMounted = mounted ?? mountedInternal;
+  const safeToggleTheme =
+    toggleTheme ??
+    (() => {
+      const next = effectiveTheme === "dark" ? "light" : "dark";
+      setTheme(next);
+    });
+  const [internalMobileOpen, setInternalMobileOpen] = useState(false);
+  const safeMobileMenuOpen = mobileMenuOpen ?? internalMobileOpen;
+  const safeSetMobileMenuOpen = setMobileMenuOpen ?? setInternalMobileOpen;
 
   const buildLocaleHref = (targetLocale: string): string => {
     if (!pathname) return `/${targetLocale}`;
@@ -71,24 +94,142 @@ export function Header({
             {t("slogan")}
           </span>
         </div>
-        <nav className="hidden md:flex gap-8">
+        <nav className="hidden md:flex gap-6">
           <Link
-            href="#features"
+            href={`/${locale}`}
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            {t("nav.home")}
+          </Link>
+          <Link
+            href={`/${locale}/#features`}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             {t("nav.features")}
           </Link>
           <Link
-            href="#testimonials"
+            href={`/${locale}/#services`}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            {t("nav.testimonials")}
+            {t("nav.services")}
+          </Link>
+          <div className="relative group">
+            <button className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground flex items-center gap-1">
+              {t("nav.agents")}
+              <ChevronDown className="size-3" />
+            </button>
+            <div className="absolute left-0 mt-0.5 hidden group-hover:block">
+              <div className="grid grid-cols-2 gap-3 p-4 rounded-lg border bg-popover text-popover-foreground shadow-md min-w-[520px]">
+                <Link
+                  href={`/${locale}/agents/administrative-assistant`}
+                  locale={false}
+                  className="flex items-start gap-3 rounded-md p-3 hover:bg-accent"
+                >
+                  <ClipboardList className="size-5 mt-0.5" />
+                  <div className="space-y-1">
+                    <div className="text-sm font-medium">
+                      {t("agents.administrativeAssistant")}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {ts("cards.0.shortDesc")}
+                    </div>
+                  </div>
+                </Link>
+                <Link
+                  href={`/${locale}/agents/compliance`}
+                  locale={false}
+                  className="flex items-start gap-3 rounded-md p-3 hover:bg-accent"
+                >
+                  <ShieldCheck className="size-5 mt-0.5" />
+                  <div className="space-y-1">
+                    <div className="text-sm font-medium">
+                      {t("agents.compliance")}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {ts("cards.1.shortDesc")}
+                    </div>
+                  </div>
+                </Link>
+                <Link
+                  href={`/${locale}/agents/procurement`}
+                  locale={false}
+                  className="flex items-start gap-3 rounded-md p-3 hover:bg-accent"
+                >
+                  <ShoppingCart className="size-5 mt-0.5" />
+                  <div className="space-y-1">
+                    <div className="text-sm font-medium">
+                      {t("agents.procurement")}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {ts("cards.2.shortDesc")}
+                    </div>
+                  </div>
+                </Link>
+                <Link
+                  href={`/${locale}/agents/aviation`}
+                  locale={false}
+                  className="flex items-start gap-3 rounded-md p-3 hover:bg-accent"
+                >
+                  <Plane className="size-5 mt-0.5" />
+                  <div className="space-y-1">
+                    <div className="text-sm font-medium">
+                      {t("agents.aviation")}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {ts("cards.3.shortDesc")}
+                    </div>
+                  </div>
+                </Link>
+                <Link
+                  href={`/${locale}/agents/shipping`}
+                  locale={false}
+                  className="flex items-start gap-3 rounded-md p-3 hover:bg-accent"
+                >
+                  <Ship className="size-5 mt-0.5" />
+                  <div className="space-y-1">
+                    <div className="text-sm font-medium">
+                      {t("agents.shipping")}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {ts("cards.4.shortDesc")}
+                    </div>
+                  </div>
+                </Link>
+                <Link
+                  href={`/${locale}/agents/healthcare`}
+                  locale={false}
+                  className="flex items-start gap-3 rounded-md p-3 hover:bg-accent"
+                >
+                  <HeartPulse className="size-5 mt-0.5" />
+                  <div className="space-y-1">
+                    <div className="text-sm font-medium">
+                      {t("agents.healthcare")}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {ts("cards.5.shortDesc")}
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <Link
+            href={`/${locale}/#how-it-works`}
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            {t("nav.howItWorks")}
           </Link>
           <Link
-            href="#faq"
+            href={`/${locale}/#faq`}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             {t("nav.faq")}
+          </Link>
+          <Link
+            href={`/${locale}/blog`}
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            {t("nav.blog")}
           </Link>
         </nav>
         <div className="hidden md:flex gap-4 items-center">
@@ -108,13 +249,37 @@ export function Header({
               className="min-w-[10rem] rtl:text-right"
             >
               <DropdownMenuSeparator />
-              <Link href={buildLocaleHref("en")} locale={false} prefetch>
+              <Link
+                href={buildLocaleHref("en")}
+                locale={false}
+                prefetch
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.assign(buildLocaleHref("en"));
+                }}
+              >
                 <DropdownMenuItem>{t("lang.english")}</DropdownMenuItem>
               </Link>
-              <Link href={buildLocaleHref("fa")} locale={false} prefetch>
+              <Link
+                href={buildLocaleHref("fa")}
+                locale={false}
+                prefetch
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.assign(buildLocaleHref("fa"));
+                }}
+              >
                 <DropdownMenuItem>{t("lang.persian")}</DropdownMenuItem>
               </Link>
-              <Link href={buildLocaleHref("ar")} locale={false} prefetch>
+              <Link
+                href={buildLocaleHref("ar")}
+                locale={false}
+                prefetch
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.assign(buildLocaleHref("ar"));
+                }}
+              >
                 <DropdownMenuItem>{t("lang.arabic")}</DropdownMenuItem>
               </Link>
             </DropdownMenuContent>
@@ -122,35 +287,26 @@ export function Header({
           <Button
             variant="ghost"
             size="icon"
-            onClick={toggleTheme}
+            onClick={safeToggleTheme}
             className="rounded-full"
           >
-            {mounted && theme === "dark" ? (
+            {isMounted && effectiveTheme === "dark" ? (
               <Sun className="size-[18px]" />
             ) : (
               <Moon className="size-[18px]" />
             )}
             <span className="sr-only">Toggle theme</span>
           </Button>
-          {/* <Link
-            href="#"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            {t("auth.login")}
-          </Link>
-          <Button className="rounded-full" onClick={openCalendlyDirect}>
-            {t("cta.getStarted")}
-            <ExternalLink className="ml-1 size-4" />
-          </Button> */}
+          {/* Optional auth/login and CTA can go here */}
         </div>
         <div className="flex items-center gap-4 md:hidden">
           <Button
             variant="ghost"
             size="icon"
-            onClick={toggleTheme}
+            onClick={safeToggleTheme}
             className="rounded-full"
           >
-            {mounted && theme === "dark" ? (
+            {isMounted && effectiveTheme === "dark" ? (
               <Sun className="size-[18px]" />
             ) : (
               <Moon className="size-[18px]" />
@@ -159,9 +315,9 @@ export function Header({
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => safeSetMobileMenuOpen(!safeMobileMenuOpen)}
           >
-            {mobileMenuOpen ? (
+            {safeMobileMenuOpen ? (
               <X className="size-5" />
             ) : (
               <Menu className="size-5" />
@@ -170,7 +326,7 @@ export function Header({
           </Button>
         </div>
       </div>
-      {mobileMenuOpen && (
+      {safeMobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -195,7 +351,11 @@ export function Header({
                   href={buildLocaleHref("en")}
                   locale={false}
                   prefetch
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    safeSetMobileMenuOpen(false);
+                    window.location.assign(buildLocaleHref("en"));
+                  }}
                 >
                   <DropdownMenuItem>{t("lang.english")}</DropdownMenuItem>
                 </Link>
@@ -203,7 +363,11 @@ export function Header({
                   href={buildLocaleHref("fa")}
                   locale={false}
                   prefetch
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    safeSetMobileMenuOpen(false);
+                    window.location.assign(buildLocaleHref("fa"));
+                  }}
                 >
                   <DropdownMenuItem>{t("lang.persian")}</DropdownMenuItem>
                 </Link>
@@ -211,52 +375,107 @@ export function Header({
                   href={buildLocaleHref("ar")}
                   locale={false}
                   prefetch
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    safeSetMobileMenuOpen(false);
+                    window.location.assign(buildLocaleHref("ar"));
+                  }}
                 >
                   <DropdownMenuItem>{t("lang.arabic")}</DropdownMenuItem>
                 </Link>
               </DropdownMenuContent>
             </DropdownMenu>
             <Link
-              href="#features"
+              href={`/${locale}/#features`}
               className="py-2 text-sm font-medium"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => safeSetMobileMenuOpen(false)}
             >
               {t("nav.features")}
             </Link>
             <Link
-              href="#testimonials"
+              href={`/${locale}`}
               className="py-2 text-sm font-medium"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => safeSetMobileMenuOpen(false)}
             >
-              {t("nav.testimonials")}
+              {t("nav.home")}
             </Link>
             <Link
-              href="#faq"
+              href={`/${locale}/#services`}
               className="py-2 text-sm font-medium"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => safeSetMobileMenuOpen(false)}
+            >
+              {t("nav.services")}
+            </Link>
+            <div className="py-2">
+              <div className="text-sm font-medium text-muted-foreground mb-2">
+                {t("nav.agents")}
+              </div>
+              <div className="pl-4 space-y-2">
+                <Link
+                  href={`/${locale}/agents/administrative-assistant`}
+                  className="block py-1 text-sm text-muted-foreground hover:text-foreground"
+                  onClick={() => safeSetMobileMenuOpen(false)}
+                >
+                  {t("agents.administrativeAssistant")}
+                </Link>
+                <Link
+                  href={`/${locale}/agents/compliance`}
+                  className="block py-1 text-sm text-muted-foreground hover:text-foreground"
+                  onClick={() => safeSetMobileMenuOpen(false)}
+                >
+                  {t("agents.compliance")}
+                </Link>
+                <Link
+                  href={`/${locale}/agents/procurement`}
+                  className="block py-1 text-sm text-muted-foreground hover:text-foreground"
+                  onClick={() => safeSetMobileMenuOpen(false)}
+                >
+                  {t("agents.procurement")}
+                </Link>
+                <Link
+                  href={`/${locale}/agents/aviation`}
+                  className="block py-1 text-sm text-muted-foreground hover:text-foreground"
+                  onClick={() => safeSetMobileMenuOpen(false)}
+                >
+                  {t("agents.aviation")}
+                </Link>
+                <Link
+                  href={`/${locale}/agents/shipping`}
+                  className="block py-1 text-sm text-muted-foreground hover:text-foreground"
+                  onClick={() => safeSetMobileMenuOpen(false)}
+                >
+                  {t("agents.shipping")}
+                </Link>
+                <Link
+                  href={`/${locale}/agents/healthcare`}
+                  className="block py-1 text-sm text-muted-foreground hover:text-foreground"
+                  onClick={() => safeSetMobileMenuOpen(false)}
+                >
+                  {t("agents.healthcare")}
+                </Link>
+              </div>
+            </div>
+            <Link
+              href={`/${locale}/#how-it-works`}
+              className="py-2 text-sm font-medium"
+              onClick={() => safeSetMobileMenuOpen(false)}
+            >
+              {t("nav.howItWorks")}
+            </Link>
+            <Link
+              href={`/${locale}/#faq`}
+              className="py-2 text-sm font-medium"
+              onClick={() => safeSetMobileMenuOpen(false)}
             >
               {t("nav.faq")}
             </Link>
-            <div className="flex flex-col gap-2 pt-2 border-t">
-              <Link
-                href="#"
-                className="py-2 text-sm font-medium"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t("auth.login")}
-              </Link>
-              <Button
-                className="rounded-full"
-                onClick={() => {
-                  openCalendlyDirect();
-                  setMobileMenuOpen(false);
-                }}
-              >
-                {t("cta.getStarted")}
-                <ExternalLink className="ml-1 size-4" />
-              </Button>
-            </div>
+            <Link
+              href={`/${locale}/blog`}
+              className="py-2 text-sm font-medium"
+              onClick={() => safeSetMobileMenuOpen(false)}
+            >
+              {t("nav.blog")}
+            </Link>
           </div>
         </motion.div>
       )}

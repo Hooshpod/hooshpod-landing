@@ -1,8 +1,14 @@
 import LandingPage from "@/components/LandingPage";
 import type { Metadata } from "next";
+import { getAllPosts } from "@/lib/blog";
 
-export default function LocalizedLandingPage() {
-  return <LandingPage />;
+export default function LocalizedLandingPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const posts = getAllPosts(params.locale).slice(0, 3);
+  return <LandingPage posts={posts} />;
 }
 
 export const dynamicParams = false;

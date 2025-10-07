@@ -5,7 +5,7 @@ export default getRequestConfig(async ({ locale }) => {
   const supported = ["en", "ar", "fa"] as const;
   const useLocale = (supported as readonly string[]).includes(locale)
     ? locale
-    : "en";
+    : "fa";
   const messages = (await import(`./messages/${useLocale}.json`)).default;
   return {
     messages,
