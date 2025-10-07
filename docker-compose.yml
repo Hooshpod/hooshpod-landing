@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: hooshpod-landing-web
     environment:
       - NODE_ENV=production
       - PORT=3000
