@@ -45,7 +45,7 @@ export default function AgentPageRoute({ params }: Props) {
   }
 
   return (
-    <div className="flex min-h-[100dvh] flex-col">
+    <div className="flex min-h-[100dvh] flex-col text-gray-900 dark:text-gray-100">
       <HeaderContainer />
       <main className="flex-1">
         <AgentPage agentKey={agent} />

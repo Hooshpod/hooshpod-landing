@@ -31,7 +31,7 @@ export function AgentPage({ agentKey }: AgentPageProps) {
   const t = useTranslations(`agents.${agentKey}`);
 
   return (
-    <div className="w-full">
+    <div className="w-full text-foreground">
       {/* Hero Section */}
       <section className="w-full py-20 md:py-32">
         <div className="container px-4 md:px-6">
@@ -186,7 +186,7 @@ export function AgentPage({ agentKey }: AgentPageProps) {
                   className="flex items-start gap-4"
                 >
                   <div className="flex-shrink-0">
-                    <div className="size-10 dark:bg-primary dark:text-black rounded-full flex items-center justify-center text-white font-semibold">
+                    <div className="size-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-semibold">
                       {step}
                     </div>
                   </div>

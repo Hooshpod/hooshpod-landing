@@ -47,7 +47,7 @@ export function CTA() {
           </div>
           <div className="text-sm text-primary-foreground/80 mt-4 space-y-1">
             <p>Email: hooshpod.ai@gmail.com</p>
-            <p>Phone: +91 9622523921</p>
+            <p>Phone: +982149205000</p>
           </div>
         </motion.div>
       </div>
