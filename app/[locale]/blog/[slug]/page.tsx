@@ -9,11 +9,15 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  // Generate static params based on English slugs as the canonical set
+  // Generate static params for all locales using English slugs as canonical
+  const locales = ["en", "ar", "fa"];
   const posts = getAllPosts("en");
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return locales.flatMap((locale) =>
+    posts.map((post) => ({
+      locale,
+      slug: post.slug,
+    }))
+  );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
