@@ -104,7 +104,7 @@ export function Footer() {
                 rel="noopener noreferrer"
               >
                 <Instagram className="size-5" />
-                <span className="sr-only">YouTube</span>
+                <span className="sr-only">Instagram</span>
               </Link>
             </div>
           </div>
