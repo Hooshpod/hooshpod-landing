@@ -30,6 +30,10 @@ DEFAULT_DOMAINS=(
     www.hooshpod.com
     hooshpardazan.com
     www.hooshpardazan.com
+    www.imperialclass.net
+    imperialclass.net
+    www.imperialclass.info
+    imperialclass.info
 )
 
 if [[ $# -gt 0 ]]; then
