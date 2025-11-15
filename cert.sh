@@ -36,6 +36,8 @@ DEFAULT_DOMAINS=(
     imperialclass.info
     chat.hooshpod.org
     www.chat.hooshpod.org
+    pyramid-marine.org
+    www.pyramid-marine.org
 )
 
 if [[ $# -gt 0 ]]; then
