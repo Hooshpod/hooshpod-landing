@@ -33,6 +33,7 @@ services:
       - certbot-webroot:/var/www/certbot
     networks:
       - app_network
+      - shared_network
 
 volumes:
   certbot-etc:
@@ -40,4 +41,7 @@ volumes:
 
 networks:
   app_network:
+    driver: bridge
+  shared_network:
+    name: hooshpod_shared
     driver: bridge
